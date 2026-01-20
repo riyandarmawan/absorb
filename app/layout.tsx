@@ -7,7 +7,7 @@ import {
   SignedOut,
   UserButton,
 } from '@clerk/nextjs'
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Geist, Geist_Mono, Inter, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css'
 import { Logo } from '@/components/Logo';
 
@@ -19,6 +19,11 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
+})
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: '--font-jakarta',
+  subsets: ['latin']
 })
 
 export const metadata: Metadata = {
@@ -34,7 +39,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <body className={`${geistSans.variable} ${geistMono.variable} ${plusJakartaSans.variable} antialiased font-sans`}>
           <header className="flex justify-between items-center p-4 gap-4 h-16 fixed top-0 inset-x-0 bg-zinc-50/90 backdrop-blur-sm z-10">
             <Logo />
 
